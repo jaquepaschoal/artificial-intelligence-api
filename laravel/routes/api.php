@@ -18,7 +18,10 @@ Route::post('register', 'API\UserController@register');
 Route::post('suggestion', 'API\SuggestionController@store');
 
 
+
 Route::group(['middleware' => 'auth:api'], function(){
-    Route::post('details', 'API\UserController@details');
+    Route::post('details', 'API\UserController@details');   
     Route::get('suggestion', 'API\SuggestionController@index');
+    Route::get('auth', 'API\UserController@auth');
+
 });
