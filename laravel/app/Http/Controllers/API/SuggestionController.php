@@ -16,7 +16,17 @@ class SuggestionController extends Controller
     public function index()
     {
         $suggestions = Suggestion::all();
-        return $suggestions;
+        $suggestion = array();
+
+        foreach ($suggestions as $key => $value){
+          array_push($suggestion,  [ 
+            $value->name, 
+            $value->email, 
+            $value->message,
+          ]);
+        }
+  
+        return $suggestion;
     }
 
     public function store(Request $request)
@@ -29,7 +39,7 @@ class SuggestionController extends Controller
 
 
         if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);            
+            return response()->json(['error'=>$validator->errors()]);            
         }
 
         $input = $request->all();
