@@ -19,7 +19,7 @@ $ php artisan passport:install
 
 * Use this route to add a user:
 ```
-/api/register   (body: name, email, password, c_password)
+POST -> /api/register   (body: name, email, password, c_password)
 ```
 
 ### Prerequisites
