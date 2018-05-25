@@ -22,6 +22,11 @@ $ php artisan passport:install
 POST -> /api/register   (body: name, email, password, c_password)
 ```
 
+* You can use this command to run your server:
+```
+$ php -S localhost:8000 -t public
+```
+
 ### Prerequisites
 
 * PHP >= 7.1.3
